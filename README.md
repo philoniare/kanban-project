@@ -17,6 +17,7 @@
 - 404 page redirect on unknown routes
 - Persistent storage of data on localStorage
 - Add to Homescreen with an icon
-- Push notification when a new card created 
+- Push notification when a new card created
+- Show description when list is empty
 
 

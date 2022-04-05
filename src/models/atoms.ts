@@ -35,9 +35,21 @@ export const columnColorList = atom({
 export const taskState = atom<ITaskState>({
   key: 'taskState',
   default: loadTasks() ?? {
-    '1234512345123': { tasks: [], name: 'Completed', color: '#2ecc71', description: '', status: 'Open' },
-    '1234512345124': { tasks: [], name: 'In progress', color: '#e67e22', description: '', status: 'Open' },
-    '1234512345125': { tasks: [], name: 'Not started', color: '#e74c3c', description: '', status: 'Open' },
+    '1234512345123': { tasks: [], name: 'Completed', color: '#2ecc71', description: 'Completed cards', status: 'Open' },
+    '1234512345124': {
+      tasks: [],
+      name: 'In progress',
+      color: '#e67e22',
+      description: 'In progress cards',
+      status: 'Open',
+    },
+    '1234512345125': {
+      tasks: [],
+      name: 'Not started',
+      color: '#e74c3c',
+      description: 'Cards that have not been started',
+      status: 'Open',
+    },
   },
 });
 

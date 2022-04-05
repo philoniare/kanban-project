@@ -51,6 +51,16 @@ const Header = styled.div`
   flex-direction: row;
   align-items: center;
 `;
+
+const LabelContainer = styled.div`
+  font-size: 12px;
+  text-align: center;
+  line-height: 2;
+  color: black;
+  padding: 2px 4px;
+  border-radius: 5px;
+`;
+
 const Label = styled.div<{ columnColor: string }>`
   width: 122px;
   margin-left: 10px;
@@ -173,7 +183,10 @@ function Column({ columnId, name, description, color, tasks, order }: IColumn) {
           />
           <Handle {...provided.dragHandleProps}>
             <Header>
-              <Label columnColor={color}>{name}</Label>
+              <LabelContainer>
+                <Label columnColor={color}>{name}</Label>
+                {tasks.length === 0 && <div>{description}</div>}
+              </LabelContainer>
               <TaskCount>{tasks.length}</TaskCount>
             </Header>
             <Popover
