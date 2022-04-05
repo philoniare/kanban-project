@@ -32,6 +32,7 @@ const EditTask = ({ columnId, task, isShown, onUpdate, onClose }: IEditColumnDia
       {({ close }) => (
         <Pane>
           <TextInputField
+            autoFocus
             label="Task name"
             value={name}
             name="text-input-name"

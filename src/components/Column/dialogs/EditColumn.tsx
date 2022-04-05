@@ -1,4 +1,4 @@
-import { Dialog, TextInput, Pane, Paragraph, Button } from 'evergreen-ui';
+import { Dialog, TextInputField, Pane, Button } from 'evergreen-ui';
 import React, { useState } from 'react';
 
 interface IEditColumnDialog {
@@ -28,15 +28,14 @@ const EditColumn = ({ name, columnId, isShown, onUpdate, onClose }: IEditColumnD
     >
       {({ close }) => (
         <Pane>
-          <Paragraph>Column name</Paragraph>
-          <Paragraph>
-            <TextInput
-              value={columnName}
-              name="text-input-name"
-              onChange={(e: any) => setColumnName(e.target.value)}
-              placeholder="Column name"
-            />
-          </Paragraph>
+          <TextInputField
+            label="Column name"
+            autoFocus
+            value={columnName}
+            name="text-input-name"
+            onChange={(e: any) => setColumnName(e.target.value)}
+            placeholder="Column name"
+          />
           <Button appearance={'primary'} intent={'success'} marginTop={16} onClick={() => handleClose(close)}>
             Update column
           </Button>
