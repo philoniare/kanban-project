@@ -16,5 +16,7 @@
 ### Additional features:
 - 404 page redirect on unknown routes
 - Persistent storage of data on localStorage
+- Add to Homescreen with an icon
+- Push notification when a new card created 
 
 
