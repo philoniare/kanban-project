@@ -121,6 +121,16 @@ function Column({ columnId, name, description, color, tasks, order }: IColumn) {
       [columnId]: { ...allTasks[columnId], tasks: [newTask, ...allTasks[columnId].tasks] },
     }));
     setValue('task', '');
+    Notification.requestPermission().then((result) => {
+      if (result === 'granted') {
+        const notifTitle = 'New Task';
+        const notifBody = `Task name: ${task}`;
+        const options = {
+          body: notifBody,
+        };
+        new Notification(notifTitle, options);
+      }
+    });
   };
 
   const onDeleteColumn = () => {
