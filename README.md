@@ -20,4 +20,5 @@
 - Push notification when a new card created
 - Show description when list is empty
 - Auto focus on initial state
+- Add form validation
 

@@ -9,10 +9,6 @@ import { loadColorCount, saveColorCount } from '../../models/localStorage';
 import { PlusIcon, Button } from 'evergreen-ui';
 import CreateColumn from './dialogs/CreateColumn';
 
-interface INewColumnForm {
-  columnId: string;
-}
-
 const Wrapper = styled.div`
   width: 400px;
   margin-left: 100px;
@@ -37,7 +33,6 @@ function AddColumn({ index }: { index: number }) {
   });
   const [colorCount, setColorCount] = useState(loadColorCount);
   const nextColor = colors[colorCount % colors.length];
-  const { setValue } = useForm<INewColumnForm>();
 
   const onColumnAdd = (name: string, description: string) => {
     const columnId = uniqid();
@@ -48,7 +43,6 @@ function AddColumn({ index }: { index: number }) {
     setColorCount(colorCount + 1);
     //Save Count in localStorage
     saveColorCount({ count: colorCount });
-    setValue('columnId', '');
   };
 
   return (
